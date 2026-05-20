@@ -37,7 +37,7 @@ nav {
  
 .hero { text-align:center;padding:5rem 2rem 3rem;position:relative;overflow:hidden; }
 .hero::before { content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(29,158,117,0.13) 0%,transparent 70%);pointer-events:none; }
-.hero-badge { display:inline-block;background:var(--green-dim);border:1px solid rgba(29,158,117,0.4);color:var(--green);font-size:11px;font-weight:700;padding:4px 14px;border-radius:100px;margin-bottom:1rem; }
+.hero-badge { display:inline-block;background:var(--green-dim);border:1px solid rgba(29,158,117,0.4);color:var(--green);font-size:11px;font-weight:700;padding:4px 14px;border-radius:100px;margin-bottom:1.2rem;letter-spacing:1px; }
 .hero h1 { font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;margin-bottom:1rem; }
 .hero h1 span { color:var(--green); }
 .hero p { font-size:15px;color:var(--muted);max-width:460px;margin:0 auto 2rem;line-height:1.85; }
@@ -67,13 +67,77 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
 .stitle { font-size:1.6rem;font-weight:900;margin-bottom:0.7rem; }
 .sdesc { font-size:14px;color:var(--muted);line-height:1.85;max-width:560px; }
  
+/* 사전예약 배너 */
+.prereg-banner {
+  background: linear-gradient(135deg, #0d2e1e, #112a1a);
+  border: 1px solid rgba(254,229,0,0.25);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  max-width: 820px;
+  margin: 0 auto 0;
+}
+.prereg-banner::before {
+  content:'';position:absolute;top:-60px;left:50%;
+  transform:translateX(-50%);width:500px;height:300px;
+  background:radial-gradient(ellipse,rgba(254,229,0,0.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.prereg-live {
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(254,229,0,0.12);border:1px solid rgba(254,229,0,0.35);
+  color:#FEE500;font-size:11px;font-weight:700;
+  padding:4px 12px;border-radius:100px;margin-bottom:1rem;letter-spacing:1px;
+}
+.prereg-live-dot {
+  width:7px;height:7px;border-radius:50%;background:#FEE500;
+  animation:blink 1.2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+.prereg-banner h2 { font-size:1.6rem;font-weight:900;margin-bottom:0.5rem; }
+.prereg-banner h2 span { color:#FEE500; }
+.prereg-banner p { font-size:14px;color:var(--muted);line-height:1.85;max-width:480px;margin:0 auto 1.5rem; }
+ 
+.prereg-rewards {
+  display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.8rem;
+}
+.reward-chip {
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(29,158,117,0.12);border:1px solid rgba(29,158,117,0.3);
+  color:var(--text);font-size:12px;font-weight:600;
+  padding:6px 14px;border-radius:100px;
+}
+.reward-chip .chip-icon { font-size:14px; }
+ 
+.prereg-btns { display:flex;gap:10px;justify-content:center;flex-wrap:wrap; }
+.kakao-big-btn {
+  display:inline-flex;align-items:center;gap:8px;
+  background:#FEE500;color:#181600;
+  border:none;padding:13px 26px;border-radius:12px;
+  font-size:14px;font-weight:700;
+  font-family:'Noto Sans KR',sans-serif;cursor:pointer;
+  transition:opacity 0.2s;text-decoration:none;
+}
+.kakao-big-btn:hover { opacity:0.88; }
+.kakao-big-svg { width:18px;height:18px;fill:#181600; }
+.prereg-sub-btn {
+  display:inline-flex;align-items:center;gap:6px;
+  background:transparent;color:var(--muted);
+  border:1px solid var(--border);padding:13px 22px;border-radius:12px;
+  font-size:13px;font-weight:600;
+  font-family:'Noto Sans KR',sans-serif;cursor:pointer;
+  transition:border-color 0.2s,color 0.2s;
+}
+.prereg-sub-btn:hover { border-color:var(--green);color:var(--green); }
+.prereg-notice { font-size:11px;color:var(--muted);margin-top:1.2rem;opacity:0.7; }
+ 
 .about-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.9rem;margin-top:1.8rem; }
 .acard { background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.3rem; }
 .acard-icon { font-size:20px;margin-bottom:0.6rem; }
 .acard h3 { font-size:13px;font-weight:700;margin-bottom:3px; }
 .acard p { font-size:12px;color:var(--muted);line-height:1.7; }
- 
-/* 카카오 카드 */
 .kakao-card {
   background:linear-gradient(135deg,#1a2e20,#1e3022);
   border:1px solid rgba(254,229,0,0.3);
@@ -113,7 +177,6 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
 .ctype-name { font-size:13px;font-weight:700;min-width:80px; }
 .ctype-desc { font-size:12px;color:var(--muted); }
  
-/* JOIN 탭 */
 .join-tabs { display:flex;gap:8px;margin-top:1.8rem;flex-wrap:wrap; }
 .jtab {
   flex:1;min-width:140px;background:var(--card);border:1px solid var(--border);
@@ -131,36 +194,26 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
  
 .join-box { background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;margin-top:1rem; }
 .join-box h3 { font-size:1.2rem;font-weight:900;margin-bottom:0.5rem; }
-.edition-badge {
-  display:inline-block;font-size:11px;font-weight:700;
-  padding:3px 10px;border-radius:20px;margin-bottom:1.2rem;
-}
+.edition-badge { display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:1.2rem; }
 .badge-java { background:rgba(255,140,0,0.15);color:#FFA040;border:1px solid rgba(255,140,0,0.3); }
 .badge-be { background:rgba(55,138,221,0.15);color:#85B7EB;border:1px solid rgba(55,138,221,0.3); }
- 
 .reveal-btn {
   background:var(--green);color:#fff;border:none;
   padding:11px 28px;border-radius:9px;font-size:14px;font-weight:700;
-  font-family:'Noto Sans KR',sans-serif;cursor:pointer;
-  transition:opacity 0.2s;
+  font-family:'Noto Sans KR',sans-serif;cursor:pointer;transition:opacity 0.2s;
 }
 .reveal-btn:hover { opacity:0.85; }
- 
 .ip-box {
-  display:none;
-  background:rgba(0,0,0,0.35);border:1px solid var(--border);
-  border-radius:9px;padding:10px 24px;
-  font-family:'Courier New',monospace;font-size:16px;font-weight:700;
-  color:var(--green);margin:1rem auto 0.3rem;letter-spacing:1px;
-  width:fit-content;
+  display:none;background:rgba(0,0,0,0.35);border:1px solid var(--border);
+  border-radius:9px;padding:10px 24px;font-family:'Courier New',monospace;
+  font-size:16px;font-weight:700;color:var(--green);margin:1rem auto 0.3rem;
+  letter-spacing:1px;width:fit-content;
 }
 .ip-box.show { display:inline-block; }
 .port-info { font-size:12px;color:var(--muted);margin-bottom:0.8rem;display:none; }
 .port-info.show { display:block; }
- 
 .copy-btn {
-  display:none;
-  background:transparent;color:var(--green);border:1px solid rgba(29,158,117,0.4);
+  display:none;background:transparent;color:var(--green);border:1px solid rgba(29,158,117,0.4);
   padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;
   font-family:'Noto Sans KR',sans-serif;cursor:pointer;transition:background 0.2s;margin-top:0.3rem;
 }
@@ -170,7 +223,6 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
  
 footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;font-size:12px;color:var(--muted);margin-top:1.5rem; }
  
-/* 모바일 */
 @media (max-width:600px) {
   nav { padding:0.8rem 1rem; }
   .nav-links { display:none; }
@@ -178,6 +230,8 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
   section { padding:2rem 1rem; }
   hr.div { margin:0 1rem; }
   .ip-box { font-size:13px;padding:8px 14px; }
+  .prereg-banner { padding:2rem 1rem; }
+  .prereg-banner h2 { font-size:1.3rem; }
 }
 </style>
 </head>
@@ -192,6 +246,7 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
     </div>
   </div>
   <div class="nav-links">
+    <a href="#prereg">사전예약</a>
     <a href="#about">소개</a>
     <a href="#rules">규칙</a>
     <a href="#company">회사</a>
@@ -205,7 +260,7 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
   <h1>함께 만드는<br><span>경제 세계</span></h1>
   <p>랜코 경제섭에서 자원을 모으고, 거래하고, 최고의 부자가 되어보세요. 공정하고 활발한 경제 생태계가 여러분을 기다립니다.</p>
   <div class="hero-btns">
-    <button class="btn-main" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">서버 접속하기 🎮</button>
+    <button class="btn-main" onclick="document.getElementById('prereg').scrollIntoView({behavior:'smooth'})">사전예약 하러가기 🎁</button>
     <button class="btn-out" onclick="document.getElementById('rules').scrollIntoView({behavior:'smooth'})">규칙 확인하기</button>
   </div>
 </div>
@@ -217,6 +272,40 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
 </div>
  
 <hr class="div">
+ 
+<!-- 사전예약 섹션 -->
+<section id="prereg" style="padding-top:3rem;padding-bottom:0;">
+  <div class="prereg-banner">
+    <div class="prereg-live">
+      <div class="prereg-live-dot"></div>
+      사전예약 진행 중
+    </div>
+    <h2>오픈 전 지금 <span>사전예약</span>하세요!</h2>
+    <p>카카오톡 오픈채팅 커뮤니티에 참여하고 사전예약을 완료하면, 서버 오픈 시 특별 보상을 받을 수 있어요. 지금 바로 커뮤니티에 들어오세요!</p>
+ 
+    <div class="prereg-rewards">
+      <div class="reward-chip"><span class="chip-icon">💰</span> 시작 자금 일반 유저 보다 많은 지원</div>
+      <div class="reward-chip"><span class="chip-icon">🎒</span> 사전예약 전용 아이템</div>
+      <div class="reward-chip"><span class="chip-icon">🏷️</span> 특별 칭호 부여</div>
+      <div class="reward-chip"><span class="chip-icon">⭐</span> 얼리버드 혜택</div>
+    </div>
+ 
+    <div class="prereg-btns">
+      <a class="kakao-big-btn" href="https://open.kakao.com/o/pa3VDRki" target="_blank" rel="noopener">
+        <svg class="kakao-big-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3C6.477 3 2 6.477 2 10.8c0 2.7 1.632 5.07 4.09 6.48L5 21l4.29-2.28C10.146 18.9 11.064 19 12 19c5.523 0 10-3.477 10-7.8C22 6.477 17.523 3 12 3z"/>
+        </svg>
+        카카오톡 커뮤니티 참여하기
+      </a>
+      <button class="prereg-sub-btn" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">
+        서버 접속하기 🎮
+      </button>
+    </div>
+    <div class="prereg-notice">* 사전예약 보상은 서버 오픈 후 커뮤니티에서 확인 및 수령 가능합니다.</div>
+  </div>
+</section>
+ 
+<hr class="div" style="margin-top:3rem;">
  
 <section id="about">
   <div class="stag">ABOUT</div>
@@ -315,7 +404,6 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
       <div class="edition-badge badge-java">☕ Java · 1.21.11</div><br>
       <button class="reveal-btn" id="reveal-java" onclick="revealIP('java')">🔓 접속 주소 확인하기</button>
       <div class="ip-box" id="ip-java">랜코.서버.한국</div>
-      <div class="port-info" id="port-java">기본 포트: 25565</div>
       <button class="copy-btn" id="copy-java" onclick="copyIP('랜코.서버.한국','copy-java')">주소 복사하기 📋</button>
       <div class="join-ver">PC 전용 · Java Edition 1.21.11</div>
     </div>
@@ -360,3 +448,4 @@ function copyIP(addr, btnId) {
 </script>
 </body>
 </html>
+ 
