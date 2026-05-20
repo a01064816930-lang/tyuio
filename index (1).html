@@ -14,7 +14,7 @@
 }
 html { scroll-behavior:smooth; }
 body { background:var(--bg); color:var(--text); font-family:'Noto Sans KR',sans-serif; min-height:100vh; }
-
+ 
 nav {
   display:flex; align-items:center; justify-content:space-between;
   padding:1rem 2rem; border-bottom:1px solid var(--border);
@@ -34,7 +34,7 @@ nav {
   font-family:'Noto Sans KR',sans-serif;cursor:pointer;transition:opacity 0.2s;
 }
 .join-btn:hover { opacity:0.85; }
-
+ 
 .hero { text-align:center;padding:5rem 2rem 3rem;position:relative;overflow:hidden; }
 .hero::before { content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(29,158,117,0.13) 0%,transparent 70%);pointer-events:none; }
 .hero-badge { display:inline-block;background:var(--green-dim);border:1px solid rgba(29,158,117,0.4);color:var(--green);font-size:11px;font-weight:700;padding:4px 14px;border-radius:100px;margin-bottom:1.2rem;letter-spacing:1px; }
@@ -54,25 +54,25 @@ nav {
   font-family:'Noto Sans KR',sans-serif;cursor:pointer;transition:border-color 0.2s,color 0.2s;
 }
 .btn-out:hover { border-color:var(--green);color:var(--green); }
-
+ 
 .stats { display:flex;justify-content:center;gap:1rem;padding:1.5rem 2rem 3rem;flex-wrap:wrap; }
 .stat { background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem 1.8rem;text-align:center;min-width:110px; }
 .stat-n { font-size:22px;font-weight:900;color:var(--green); }
 .stat-l { font-size:11px;color:var(--muted);margin-top:2px; }
-
+ 
 hr.div { border:none;border-top:1px solid var(--border);margin:0 2rem; }
-
+ 
 section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
 .stag { font-size:10px;font-weight:700;letter-spacing:2px;color:var(--green);text-transform:uppercase;margin-bottom:0.5rem; }
 .stitle { font-size:1.6rem;font-weight:900;margin-bottom:0.7rem; }
 .sdesc { font-size:14px;color:var(--muted);line-height:1.85;max-width:560px; }
-
+ 
 .about-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.9rem;margin-top:1.8rem; }
 .acard { background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.3rem; }
 .acard-icon { font-size:20px;margin-bottom:0.6rem; }
 .acard h3 { font-size:13px;font-weight:700;margin-bottom:3px; }
 .acard p { font-size:12px;color:var(--muted);line-height:1.7; }
-
+ 
 /* 카카오 카드 */
 .kakao-card {
   background:linear-gradient(135deg,#1a2e20,#1e3022);
@@ -89,13 +89,13 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
   font-family:'Noto Sans KR',sans-serif;
 }
 .kakao-svg { width:15px;height:15px;fill:#181600; }
-
+ 
 .rules-list { margin-top:1.8rem;display:flex;flex-direction:column;gap:0.65rem; }
 .rule { display:flex;align-items:flex-start;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:0.9rem 1.1rem; }
 .rnum { min-width:26px;height:26px;background:var(--green-dim);border:1px solid rgba(29,158,117,0.3);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--green); }
 .rtext { font-size:13px;line-height:1.6;padding-top:3px; }
 .rtext strong { color:var(--green); }
-
+ 
 .company-intro { background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.8rem;margin-top:1.8rem;margin-bottom:1.3rem; }
 .company-intro p { font-size:13px;color:var(--muted);line-height:1.85; }
 .company-intro strong { color:var(--green); }
@@ -112,7 +112,7 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
 .b-green { background:var(--green-dim);color:var(--green);border:1px solid rgba(29,158,117,0.3); }
 .ctype-name { font-size:13px;font-weight:700;min-width:80px; }
 .ctype-desc { font-size:12px;color:var(--muted); }
-
+ 
 /* JOIN 탭 */
 .join-tabs { display:flex;gap:8px;margin-top:1.8rem;flex-wrap:wrap; }
 .jtab {
@@ -125,10 +125,10 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
 .jtab-icon { font-size:22px;margin-bottom:6px; }
 .jtab-name { font-size:13px;font-weight:700;color:var(--text); }
 .jtab-sub { font-size:11px;color:var(--muted);margin-top:2px; }
-
+ 
 .panel { display:none; }
 .panel.active { display:block; }
-
+ 
 .join-box { background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;margin-top:1rem; }
 .join-box h3 { font-size:1.2rem;font-weight:900;margin-bottom:0.5rem; }
 .edition-badge {
@@ -137,7 +137,7 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
 }
 .badge-java { background:rgba(255,140,0,0.15);color:#FFA040;border:1px solid rgba(255,140,0,0.3); }
 .badge-be { background:rgba(55,138,221,0.15);color:#85B7EB;border:1px solid rgba(55,138,221,0.3); }
-
+ 
 .reveal-btn {
   background:var(--green);color:#fff;border:none;
   padding:11px 28px;border-radius:9px;font-size:14px;font-weight:700;
@@ -145,7 +145,7 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
   transition:opacity 0.2s;
 }
 .reveal-btn:hover { opacity:0.85; }
-
+ 
 .ip-box {
   display:none;
   background:rgba(0,0,0,0.35);border:1px solid var(--border);
@@ -157,7 +157,7 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
 .ip-box.show { display:inline-block; }
 .port-info { font-size:12px;color:var(--muted);margin-bottom:0.8rem;display:none; }
 .port-info.show { display:block; }
-
+ 
 .copy-btn {
   display:none;
   background:transparent;color:var(--green);border:1px solid rgba(29,158,117,0.4);
@@ -167,9 +167,9 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
 .copy-btn:hover { background:var(--green-dim); }
 .copy-btn.show { display:inline-block; }
 .join-ver { font-size:12px;color:var(--muted);margin-top:1rem; }
-
+ 
 footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;font-size:12px;color:var(--muted);margin-top:1.5rem; }
-
+ 
 /* 모바일 */
 @media (max-width:600px) {
   nav { padding:0.8rem 1rem; }
@@ -182,7 +182,7 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <div class="logo">
     <div class="logo-box">⛏️</div>
@@ -199,7 +199,7 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
   </div>
   <button class="join-btn" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">접속하기</button>
 </nav>
-
+ 
 <div class="hero">
   <div class="hero-badge">🌿 ECONOMY SERVER · 통합서버</div>
   <h1>함께 만드는<br><span>경제 세계</span></h1>
@@ -209,16 +209,16 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
     <button class="btn-out" onclick="document.getElementById('rules').scrollIntoView({behavior:'smooth'})">규칙 확인하기</button>
   </div>
 </div>
-
+ 
 <div class="stats">
   <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">서버 운영</div></div>
   <div class="stat"><div class="stat-n">통합</div><div class="stat-l">Java + BE</div></div>
   <div class="stat"><div class="stat-n">경제</div><div class="stat-l">서버 타입</div></div>
-  <div class="stat"><div class="stat-n">1.21.11</div><div class="stat-l">버전</div></div>
+  <div class="stat"><div class="stat-n">1.21</div><div class="stat-l">버전</div></div>
 </div>
-
+ 
 <hr class="div">
-
+ 
 <section id="about">
   <div class="stag">ABOUT</div>
   <div class="stitle">랜코 경제섭이란?</div>
@@ -240,9 +240,9 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
     </a>
   </div>
 </section>
-
+ 
 <hr class="div">
-
+ 
 <section id="rules">
   <div class="stag">RULES</div>
   <div class="stitle">서버 규칙</div>
@@ -255,9 +255,9 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
     <div class="rule"><div class="rnum">5</div><div class="rtext"><strong>서버 도배 / 스팸 금지</strong> — 채팅 도배, 광고성 메시지 반복 전송은 금지입니다.</div></div>
   </div>
 </section>
-
+ 
 <hr class="div">
-
+ 
 <section id="company">
   <div class="stag">COMPANY</div>
   <div class="stitle">회사 시스템 🏢</div>
@@ -289,14 +289,14 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
     </div>
   </div>
 </section>
-
+ 
 <hr class="div">
-
+ 
 <section id="join">
   <div class="stag">JOIN</div>
   <div class="stitle">지금 접속하기</div>
   <div class="sdesc">Java Edition과 Bedrock Edition 모두 접속 가능한 통합 서버예요!</div>
-
+ 
   <div class="join-tabs">
     <div class="jtab active" id="tab-java" onclick="switchJoin('java')">
       <div class="jtab-icon">☕</div>
@@ -309,7 +309,7 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
       <div class="jtab-sub">모바일 · 콘솔 · Windows</div>
     </div>
   </div>
-
+ 
   <div class="panel active" id="panel-java">
     <div class="join-box">
       <h3>Java Edition 접속</h3>
@@ -321,7 +321,7 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
       <div class="join-ver">PC 전용 · Java Edition 1.21.11</div>
     </div>
   </div>
-
+ 
   <div class="panel" id="panel-be">
     <div class="join-box">
       <h3>Bedrock Edition 접속</h3>
@@ -334,9 +334,9 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
     </div>
   </div>
 </section>
-
+ 
 <footer>© 2025 랜코 경제섭 · 모든 권리 보유 · Java & Bedrock 통합서버</footer>
-
+ 
 <script>
 function switchJoin(type) {
   document.querySelectorAll('.jtab').forEach(t => t.classList.remove('active'));
