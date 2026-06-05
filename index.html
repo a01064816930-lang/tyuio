@@ -11,6 +11,7 @@
   --green:#1D9E75; --green-dim:rgba(29,158,117,0.15);
   --bg:#0d1a13; --card:#1a2e20; --border:rgba(29,158,117,0.25);
   --text:#e8f5ee; --muted:#7ab89a; --gold:#EF9F27;
+  --crimson:#ff4d4d; --crimson-dim:rgba(255,77,77,0.15);
 }
 html { scroll-behavior:smooth; }
 body { background:var(--bg); color:var(--text); font-family:'Noto Sans KR',sans-serif; min-height:100vh; }
@@ -67,10 +68,10 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
 .stitle { font-size:1.6rem;font-weight:900;margin-bottom:0.7rem; }
 .sdesc { font-size:14px;color:var(--muted);line-height:1.85;max-width:560px; }
  
-/* 사전예약 배너 */
+/* 오픈 카운트다운 배너 (구 사전예약 배너) */
 .prereg-banner {
-  background: linear-gradient(135deg, #0d2e1e, #112a1a);
-  border: 1px solid rgba(254,229,0,0.25);
+  background: linear-gradient(135deg, #142219, #0d1a13);
+  border: 1px solid rgba(239,159,39,0.25);
   border-radius: 20px;
   padding: 2.5rem 2rem;
   text-align: center;
@@ -82,35 +83,34 @@ section { padding:3rem 2rem;max-width:820px;margin:0 auto; }
 .prereg-banner::before {
   content:'';position:absolute;top:-60px;left:50%;
   transform:translateX(-50%);width:500px;height:300px;
-  background:radial-gradient(ellipse,rgba(254,229,0,0.06) 0%,transparent 70%);
+  background:radial-gradient(ellipse,rgba(239,159,39,0.06) 0%,transparent 70%);
   pointer-events:none;
 }
 .prereg-live {
   display:inline-flex;align-items:center;gap:6px;
-  background:rgba(254,229,0,0.12);border:1px solid rgba(254,229,0,0.35);
-  color:#FEE500;font-size:11px;font-weight:700;
+  background:var(--crimson-dim);border:1px solid rgba(255,77,77,0.35);
+  color:var(--crimson);font-size:11px;font-weight:700;
   padding:4px 12px;border-radius:100px;margin-bottom:1rem;letter-spacing:1px;
 }
 .prereg-live-dot {
-  width:7px;height:7px;border-radius:50%;background:#FEE500;
-  animation:blink 1.2s infinite;
+  width:7px;height:7px;border-radius:50%;background:var(--crimson);
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
 .prereg-banner h2 { font-size:1.6rem;font-weight:900;margin-bottom:0.5rem; }
-.prereg-banner h2 span { color:#FEE500; }
+.prereg-banner h2 span { color:var(--gold); }
 .prereg-banner p { font-size:14px;color:var(--muted);line-height:1.85;max-width:480px;margin:0 auto 1.5rem; }
  
-.prereg-rewards {
-  display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.8rem;
+/* 카운트다운 전광판 스타일 */
+.countdown-container {
+  display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 1.8rem;
 }
-.reward-chip {
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(29,158,117,0.12);border:1px solid rgba(29,158,117,0.3);
-  color:var(--text);font-size:12px;font-weight:600;
-  padding:6px 14px;border-radius:100px;
+.time-box {
+  background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border);
+  border-radius: 12px; min-width: 70px; padding: 0.75rem 0.5rem;
 }
-.reward-chip .chip-icon { font-size:14px; }
- 
+.time-val { font-size: 28px; font-weight: 900; color: var(--gold); font-family: 'Courier New', monospace; line-height: 1; }
+.time-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; font-weight: 700; }
+
 .prereg-btns { display:flex;gap:10px;justify-content:center;flex-wrap:wrap; }
 .kakao-big-btn {
   display:inline-flex;align-items:center;gap:8px;
@@ -246,7 +246,7 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
     </div>
   </div>
   <div class="nav-links">
-    <a href="#prereg">사전예약</a>
+    <a href="#prereg">오픈카운트</a>
     <a href="#about">소개</a>
     <a href="#rules">규칙</a>
     <a href="#company">회사</a>
@@ -260,7 +260,7 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
   <h1>함께 만드는<br><span>경제 세계</span></h1>
   <p>랜코 경제섭에서 자원을 모으고, 거래하고, 최고의 부자가 되어보세요. 공정하고 활발한 경제 생태계가 여러분을 기다립니다.</p>
   <div class="hero-btns">
-    <button class="btn-main" onclick="document.getElementById('prereg').scrollIntoView({behavior:'smooth'})">사전예약 하러가기 🎁</button>
+    <button class="btn-main" onclick="document.getElementById('prereg').scrollIntoView({behavior:'smooth'})">오픈 시간 확인하기 ⏰</button>
     <button class="btn-out" onclick="document.getElementById('rules').scrollIntoView({behavior:'smooth'})">규칙 확인하기</button>
   </div>
 </div>
@@ -273,21 +273,20 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
  
 <hr class="div">
  
-<!-- 사전예약 섹션 -->
 <section id="prereg" style="padding-top:3rem;padding-bottom:0;">
   <div class="prereg-banner">
     <div class="prereg-live">
       <div class="prereg-live-dot"></div>
-      사전예약 진행 중
+      사전예약 종료 · 오픈 임박
     </div>
-    <h2>오픈 전 지금 <span>사전예약</span>하세요!</h2>
-    <p>카카오톡 오픈채팅 커뮤니티에 참여하고 사전예약을 완료하면, 서버 오픈 시 특별 보상을 받을 수 있어요. 지금 바로 커뮤니티에 들어오세요!</p>
+    <h2>정식 오픈까지 <span>카운트다운</span></h2>
+    <p>많은 분들의 성원 속에 사전예약이 마감되었습니다!<br>내일 일요일 오후 7시, 드디어 랜코 경제섭의 문이 열립니다.</p>
  
-    <div class="prereg-rewards">
-      <div class="reward-chip"><span class="chip-icon">💰</span> 초기 정착금 추가 지급</div>
-      <div class="reward-chip"><span class="chip-icon">🎒</span> 사전예약 한정 아이템</div>
-      <div class="reward-chip"><span class="chip-icon">🏷️</span> 특별 한정 칭호 부여</div>
-      <div class="reward-chip"><span class="chip-icon">⭐</span> 얼리버드 전용 혜택</div>
+    <div class="countdown-container">
+      <div class="time-box"><div class="time-val" id="days">00</div><div class="time-lbl">DAYS</div></div>
+      <div class="time-box"><div class="time-val" id="hours">00</div><div class="time-lbl">HOURS</div></div>
+      <div class="time-box"><div class="time-val" id="minutes">00</div><div class="time-lbl">MINUTES</div></div>
+      <div class="time-box"><div class="time-val" id="seconds">00</div><div class="time-lbl">SECONDS</div></div>
     </div>
  
     <div class="prereg-btns">
@@ -295,13 +294,13 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
         <svg class="kakao-big-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 3C6.477 3 2 6.477 2 10.8c0 2.7 1.632 5.07 4.09 6.48L5 21l4.29-2.28C10.146 18.9 11.064 19 12 19c5.523 0 10-3.477 10-7.8C22 6.477 17.523 3 12 3z"/>
         </svg>
-        카카오톡 커뮤니티 참여하기
+        공식 커뮤니티에서 대기하기
       </a>
       <button class="prereg-sub-btn" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">
-        서버 접속 가이드 🎮
+        서버 주소 미리 등록 🎮
       </button>
     </div>
-    <div class="prereg-notice">* 사전예약 보상은 서버 정식 오픈 후 커뮤니티를 통해 수령하실 수 있습니다.</div>
+    <div class="prereg-notice">* 사전예약 보상은 정식 오픈 이후 커뮤니티 공지를 통해 지급 가이드가 안내됩니다.</div>
   </div>
 </section>
  
@@ -382,7 +381,7 @@ footer { border-top:1px solid var(--border);text-align:center;padding:1.8rem;fon
  
 <section id="join">
   <div class="stag">JOIN</div>
-  <div class="stitle">서버 접속 가이드 <span style="font-size:13px; color:var(--gold); font-weight:normal;">(정식 오픈 준비 중)</span></div>
+  <div class="stitle">서버 접속 가이드 <span style="font-size:13px; color:var(--gold); font-weight:bold;">(곧 오픈!)</span></div>
   <div class="sdesc">Java Edition과 Bedrock Edition 모두 접속 가능한 편리한 크로스 플레이 통합 서버예요!</div>
  
   <div class="join-tabs">
@@ -452,6 +451,44 @@ function copyIP(addr, btnId, port) {
     alert(port ? `주소: ${addr}\n포트: ${port}` : `주소: ${addr}`);
   });
 }
+
+// 실시간 일요일 오후 7시 카운트다운 스크립트
+function updateCountdown() {
+  const now = new Date();
+  
+  // 내일(일요일) 날짜 구하기
+  const targetDate = new Date();
+  targetDate.setDate(now.getDate() + (7 - now.getDay()) % 7); // 가장 가까운 다음 일요일 계산
+  if (now.getDay() === 0 && now.getHours() >= 19) {
+    // 만약 오늘이 일요일이고 이미 오후 7시가 넘었다면 다음 주 일요일로 세팅
+    targetDate.setDate(targetDate.getDate() + 7);
+  }
+  targetDate.setHours(19, 0, 0, 0); // 오후 7시(19:00:00) 설정
+
+  const diff = targetDate - now;
+
+  if (diff <= 0) {
+    document.getElementById('days').textContent = '00';
+    document.getElementById('hours').textContent = '00';
+    document.getElementById('minutes').textContent = '00';
+    document.getElementById('seconds').textContent = '00';
+    return;
+  }
+
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById('days').textContent = String(d).padStart(2, '0');
+  document.getElementById('hours').textContent = String(h).padStart(2, '0');
+  document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+  document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+}
+
+// 1초마다 카운트다운 업데이트 호출
+setInterval(updateCountdown, 1000);
+updateCountdown(); // 초기 실행
 </script>
 </body>
 </html>
